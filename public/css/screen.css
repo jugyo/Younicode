@@ -1,0 +1,152 @@
+/* Eric Meyer's reset
+	http://meyerweb.com/eric/tools/css/reset/ 
+	v2.0b1 | 201101 
+	NOTE: WORK IN PROGRESS
+	USE WITH CAUTION AND TEST WITH ABANDON */
+
+/* Use this reset as a starting point, and customize to your needs */
+/* Slightly modified to prevent anchor elements from losing outline, as in HTML5 Boilerplate */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define visible focus styles! 
+:focus {
+	outline: ?????;
+} */
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Meyer's reset ends here */
+
+#main {
+  padding: 100px 0;
+  text-align: center;
+}
+
+#char-code {
+  font-weight: bold;
+  color: #666;
+  margin: 20px 0;
+}
+
+#chars {
+  font-size: 16px;
+}
+
+.chars {
+  color: #000;
+  opacity: 0.8;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.1em;
+  height: 1.1em;
+  padding: 1px;
+}
+
+#char {
+  opacity: 1.0;
+  position: relative;
+  background-color: rgba(100%, 100%, 100%, 0.8);
+  border: solid 1px #CCC;
+  font-size: 200%;
+  margin: 0 -0.2em;
+  padding: 0.2em;
+  z-index: 1000;
+}
+
+/*.small-0 {
+  font-size: 200%;
+}
+
+.small-1 {
+  font-size: 500%;
+}
+
+.small-2 {
+  font-size: 250%;
+}
+
+.small-3 {
+  font-size: 125%;
+}
+
+.small-4 {
+  font-size: 400%;
+}
+
+.small-5 {
+  font-size: 350%;
+}
+
+.small-6 {
+  font-size: 300%;
+}
+
+.small-7 {
+  font-size: 250%;
+}
+
+.small-8 {
+  font-size: 200%;
+}
+
+.small-9 {
+  font-size: 150%;
+}
+
+.small-10 {
+  font-size: 100%;
+}
+*/

@@ -1,0 +1,72 @@
+<!DOCTYPE html><!-- simplified doctype works for all previous versions of HTML as well -->
+
+<!-- Paul Irish's technique for targeting IE, modified to only target IE6, applied to the html element instead of body -->
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if (gt IE 6)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
+
+<head>
+	<!-- simplified character encoding -->
+	<meta charset="utf-8">
+
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Delete these two icon references once you've placed them in the root directory with these file names -->
+	<!-- favicon 16x16 -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- apple touch icon 57x57 -->
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+	<!-- Main style sheet. Change version number in query string to force styles refresh -->
+	<!-- Link element no longer needs type attribute -->
+	<link rel="stylesheet" href="css/screen.css?v=1.0">
+
+	<!-- Modernizr for feature detection of CSS3 and HTML5; must be placed in the "head" -->
+	<!-- Script tag no longer needs type attribute -->
+	<script src="js/modernizr-1.6.min.js"></script>
+
+	<!-- Remove the script reference below if you're using Modernizr -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+
+<!-- If possible, use the body as the container -->
+<!-- The "home" class is an example of a dynamic class created on the server for page-specific targeting -->
+<body class="home">
+
+	<div id="main">
+
+    <div id="chars">
+    </div>
+
+    <div id="char-code"></div>
+
+	</div><!-- #main -->
+
+<!-- Remote jQuery with local fallback; taken from HTML5 Boilerplate http://html5boilerplate.com -->
+<!-- jQuery version might not be the latest; check jquery.com -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
+
+<!-- Below is your script file, which has a basic JavaScript design pattern that you can optionally use -->
+<!-- Keep this and plugin scripts at the bottom for faster page load; combining and minifying scripts is recommended -->
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/general.js"></script>
+
+<!-- asynchronous analytics code by Mathias Bynens; change UA-XXXXX-X to your own code; http://mathiasbynens.be/notes/async-analytics-snippet -->
+<!-- this can also be placed in the <head> if you want page views to be tracked quicker -->
+<script>
+var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+(function(d, t) {
+	var g = d.createElement(t),
+		s = d.getElementsByTagName(t)[0];
+	g.async = true;
+	g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g, s);
+})(document, 'script');
+</script>
+</body>
+</html>
