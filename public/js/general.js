@@ -44,7 +44,7 @@ $(function () {
   };
 
   $('body').mousewheel(function(event, delta) {
-    console.log('delta => ' + delta);
+    // console.log('delta => ' + delta);
     var code = $._code - (delta * $._speed);
     if (code < 0) {
       code = 0;
