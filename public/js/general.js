@@ -30,10 +30,13 @@ $(function () {
     $('.chars').each(function(index, elem) {
       var offset = -$._size + index;
       var _code = code + offset;
-      var chr = '';
-      if (_code >= 0) {
-        chr = String.fromCharCode(_code);
+      if (_code > 0xffff) {
+        _code = _code - 0xffff;
+      } else if (_code < 0) {
+        _code = 0xffff + _code;
       }
+      var chr = String.fromCharCode(_code);
+      // var chr = _code;
       $(elem).text(chr);
     });
   };
@@ -42,6 +45,8 @@ $(function () {
     // console.log('delta => ' + delta);
     var code = $._code - (delta * $._speed);
     if (code < 0) {
+      code = 0xffff;
+    } else if (code > 0xffff) {
       code = 0;
     }
     $._code = code;
@@ -74,7 +79,7 @@ $(function () {
   if (window.location.hash != '') {
     $._code = $.codeFromHash();
   } else {
-    $._code = parseInt(2588, 16); //
+    $._code = 0x2588;
   }
 
   $._size = 24;
