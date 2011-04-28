@@ -13,12 +13,8 @@ $(function () {
     return parseInt(window.location.hash.substr(1, window.location.hash.length - 1), 16);
   };
 
-  $.draw = function(force) {
+  $.draw = function() {
     var code = $.code();
-    if (!force && $.codeFromHash() == code.toString()) {
-      return;
-    }
-
     var code16 = code.toString(16);
 
     window.location.hash = code16;
@@ -84,5 +80,5 @@ $(function () {
   $._speed = 4;
 
   $.setup();
-  $.draw(true);
+  $.draw();
 });
