@@ -13,15 +13,13 @@ $(function () {
     return parseInt(window.location.hash.substr(1, window.location.hash.length - 1), 16);
   };
 
-  $.draw = function() {
+  $.draw = function(force) {
     var code = $.code();
-    if ($("#char-code").text() == code.toString()) {
+    if (!force && $.codeFromHash() == code.toString()) {
       return;
     }
 
     var code16 = code.toString(16);
-
-    $("#char-code").text(code16);
 
     window.location.hash = code16;
     document.title = String.fromCharCode(code);
@@ -86,5 +84,5 @@ $(function () {
   $._speed = 4;
 
   $.setup();
-  $.draw();
+  $.draw(true);
 });
