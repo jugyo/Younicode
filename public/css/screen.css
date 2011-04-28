@@ -93,11 +93,7 @@ table {
   width: 1.1em;
   height: 1.1em;
   padding: 1px;
-}
-
-.chars:hover {
-  border: solid 1px #CCC;
-  padding: 0;
+  border: solid 1px transparent;
 }
 
 #char {
