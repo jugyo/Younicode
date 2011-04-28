@@ -31,7 +31,7 @@ $(function () {
       }
       var chr = String.fromCharCode(_code);
       // var chr = _code;
-      $(elem).text(chr);
+      $(elem).text(chr).attr({'code':_code});
     });
   };
 
@@ -68,6 +68,11 @@ $(function () {
         )
       );
     };
+
+    $('.chars').click(function() {
+      $._code = $(this).attr('code');
+      $.draw();
+    });
   };
 
   if (window.location.hash != '') {

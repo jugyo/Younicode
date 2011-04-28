@@ -95,6 +95,11 @@ table {
   padding: 1px;
 }
 
+.chars:hover {
+  border: solid 1px #CCC;
+  padding: 0;
+}
+
 #char {
   opacity: 1.0;
   position: relative;
