@@ -5,17 +5,12 @@
 // You can delete this whole thing, or do whatever you want with it, it's just a basic starting point that I've been using lately
 
 $(function () {
-
-  if (window.location.hash != '') {
-    $._code = parseInt(window.location.hash.substr(1, window.location.hash.length - 1), 16);
-  } else {
-    $._code = parseInt(2588, 16); //
-  }
-  $._size = 24;
-  $._speed = 4;
-
   $.code = function() {
     return Math.floor($._code);
+  };
+
+  $.codeFromHash = function() {
+    return parseInt(window.location.hash.substr(1, window.location.hash.length - 1), 16);
   };
 
   $.draw = function() {
@@ -53,6 +48,11 @@ $(function () {
     $.draw();
   });
 
+  window.onhashchange = function () {
+    $._code = $.codeFromHash();
+    $.draw();
+  };
+
   $.setup = function() {
     for (var i=0; i < $._size; i++) {
       $("#chars").append(
@@ -70,6 +70,15 @@ $(function () {
       );
     };
   };
+
+  if (window.location.hash != '') {
+    $._code = $.codeFromHash();
+  } else {
+    $._code = parseInt(2588, 16); //
+  }
+
+  $._size = 24;
+  $._speed = 4;
 
   $.setup();
   $.draw();
