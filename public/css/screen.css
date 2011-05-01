@@ -73,6 +73,25 @@ table {
 #main {
   padding: 100px 0;
   text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#nav div {
+  font-size: 160%;
+  color: #999;
+}
+
+#nav div:hover {
+  color: #333;
+}
+
+#nav .left {
+  float: left;
+}
+
+#nav .right {
+  float: right;
 }
 
 #char-code {
@@ -82,6 +101,7 @@ table {
 }
 
 #chars {
+  clear: both;
   font-size: 16px;
 }
 

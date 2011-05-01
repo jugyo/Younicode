@@ -13,6 +13,7 @@ $(function () {
     return parseInt(window.location.hash.substr(1, window.location.hash.length - 1), 16);
   };
 
+  // draw
   $.draw = function() {
     var code = $.code();
     var code16 = code.toString(16);
@@ -35,6 +36,7 @@ $(function () {
     });
   };
 
+  // mousewheel
   $('body').mousewheel(function(event, delta) {
     // console.log('delta => ' + delta);
     var code = $._code - (delta * $._speed);
@@ -47,11 +49,42 @@ $(function () {
     $.draw();
   });
 
+  // loop
+  $._loop = false;
+  $.startLoop = function(inc) {
+    var loopCount = 0;
+    $._loop = true;
+    var loop = function() {
+      $._code = $._code + inc;
+      $.draw();
+      loopCount++;
+      if (loopCount % 10 == 0) {
+        inc = inc * 2;
+      }
+      if ($._loop) {
+        setTimeout(loop, 100);
+      }
+    };
+    loop();
+  };
+  $('#nav .left').mouseover(function(event) {
+    $.startLoop(-1);
+  }).mouseleave(function(event) {
+    $._loop = false;
+  });
+  $('#nav .right').mouseover(function(event) {
+    $.startLoop(1);
+  }).mouseleave(function(event) {
+    $._loop = false;
+  });
+
+  // onhashchange
   window.onhashchange = function () {
     $._code = $.codeFromHash();
     $.draw();
   };
 
+  // setup
   $.setup = function() {
     for (var i=0; i < $._size; i++) {
       $("#chars").append(
