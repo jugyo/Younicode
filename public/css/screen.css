@@ -79,7 +79,7 @@ table {
 .nav {
   font-size: 16px;
   color: #FFF;
-  background-color: #CCC;
+  background-color: blue;
   margin-bottom: -18px;
   border: solid 1px transparent;
   padding: 0 4px;
@@ -87,7 +87,7 @@ table {
 }
 
 .nav:hover {
-  background-color: #999;
+/*  background-color: #999;*/
 }
 
 .nav.left {
@@ -105,7 +105,7 @@ table {
 
 a.chars {
   text-decoration: none;
-  color: #000;
+  color: #666;
   background-color: #FFF;
   opacity: 0.9;
   display: inline-block;
@@ -117,6 +117,7 @@ a.chars {
 
 a.chars.hover {
   position: relative;
+  color: #000;
   border: solid 1px #CCC;
   padding: 2px;
   font-size: 32px;
@@ -128,8 +129,8 @@ a.chars.hover {
 
 a.chars.current {
   color: #FFF;
-  border: solid 1px #000;
-  background-color: #000;
+  border: solid 1px red;
+  background-color: red;
 }
 
 #char {
