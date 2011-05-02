@@ -1,28 +1,11 @@
-/*globals $ window document */
-// the line above helps JSLint ignore certain globals; keep it and customize it if you're using JSLint's "good parts" to check your scripts
-
-// The script below does essentially nothing other than define some nearly empty methods and a few settings for demonstration purposes
-// You can delete this whole thing, or do whatever you want with it, it's just a basic starting point that I've been using lately
-
 $(function () {
   $.code = function() {
     return Math.floor($._code);
   };
 
-  $.codeFromHash = function() {
-    return parseInt(window.location.hash.substr(1, window.location.hash.length - 1), 16);
-  };
-
   // draw
   $.draw = function() {
     var code = $.code();
-    var code16 = code.toString(16);
-
-    window.location.hash = code16;
-    var chr = String.fromCharCode(code);
-    document.title = chr;
-    var status = chr + ' ' + escape(location.href);
-    $('#tweet-link').attr({'href':'http://twitter.com/?status=' + status});
 
     var length = $('.chars').length;
     $('.chars').each(function(index, elem) {
@@ -34,14 +17,19 @@ $(function () {
         _code = 0xffff + _code;
       }
       var chr = String.fromCharCode(_code);
-      // var chr = _code;
-      $(elem).text(chr).attr({'code':_code});
+      $(elem).text(chr);
+      if (_code == $._current_code) {
+        $(elem).attr({'href':'javascript:void(0)'});
+        $(elem).addClass('current');
+      } else {
+        $(elem).attr({'href':'/' + _code.toString(16)});
+        $(elem).removeClass('current');
+      }
     });
   };
 
   // mousewheel
   $('body').mousewheel(function(event, delta) {
-    // console.log('delta => ' + delta);
     var code = $._code - (delta * $._speed);
     if (code < 0) {
       code = 0xffff;
@@ -62,7 +50,10 @@ $(function () {
       $.draw();
       loopCount++;
       if (loopCount % 10 == 0) {
-        inc = inc * 2;
+        var _inc = inc * 2;
+        if (_inc <= $._loop_max_speed) {
+          inc = _inc;
+        }
       }
       if ($._loop) {
         setTimeout(loop, 100);
@@ -70,55 +61,38 @@ $(function () {
     };
     loop();
   };
-  $('#nav .left').mouseover(function(event) {
+  $('.nav.left').mouseover(function(event) {
     $.startLoop(-1);
   }).mouseleave(function(event) {
     $._loop = false;
   });
-  $('#nav .right').mouseover(function(event) {
+  $('.nav.right').mouseover(function(event) {
     $.startLoop(1);
   }).mouseleave(function(event) {
     $._loop = false;
   });
 
-  // onhashchange
-  window.onhashchange = function () {
-    $._code = $.codeFromHash();
-    $.draw();
-  };
-
   // setup
   $.setup = function() {
-    for (var i=0; i < $._size; i++) {
-      $("#chars").append(
-        $('<div class="chars">').attr(
-          {'class': "chars " + "small-" + ($._size - i - 1)}
-        )
-      );
-    };
-    $("#chars").append('<div id="char" class="chars">');
-    for (var i=0; i < $._size; i++) {
-      $("#chars").append(
-        $('<div class="chars">').attr(
-          {'class': "chars " + "small-" + i}
-        )
-      );
+    for (var i=0; i < $._size * 2 + 1; i++) {
+      $("#chars").append($('<a class="chars">'));
     };
 
-    $('.chars').click(function() {
-      $._code = $(this).attr('code');
-      $.draw();
+    $('.chars').hover(function() {
+      $(this).addClass('hover');
+    }, function() {
+      $(this).removeClass('hover');
     });
   };
 
-  if (window.location.hash != '') {
-    $._code = $.codeFromHash();
-  } else {
-    $._code = 0x2588;
+  $._code = 0x2588;
+  var matches = location.pathname.match(/^\/([0-9a-f]+)/i);
+  if (matches) {
+    $._current_code = $._code = parseInt(matches[1], 16);
   }
-
-  $._size = 24;
+  $._size = 23;
   $._speed = 4;
+  $._loop_max_speed = 1024;
 
   $.setup();
   $.draw();

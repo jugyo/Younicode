@@ -71,33 +71,31 @@ table {
 /* Meyer's reset ends here */
 
 #main {
-  padding: 100px 0;
   text-align: center;
-  width: 1000px;
-  margin: 0 auto;
+  width: 900px;
+  margin: 20px auto;
 }
 
-#nav div {
-  font-size: 160%;
-  color: #999;
+.nav {
+  font-size: 16px;
+  color: #FFF;
+  background-color: #CCC;
+  margin-bottom: -18px;
+  border: solid 1px transparent;
+  padding: 0 4px;
+  height: 16px;
 }
 
-#nav div:hover {
-  color: #333;
+.nav:hover {
+  background-color: #999;
 }
 
-#nav .left {
+.nav.left {
   float: left;
 }
 
-#nav .right {
+.nav.right {
   float: right;
-}
-
-#char-code {
-  font-weight: bold;
-  color: #666;
-  margin: 20px 0;
 }
 
 #chars {
@@ -105,14 +103,33 @@ table {
   font-size: 16px;
 }
 
-.chars {
+a.chars {
+  text-decoration: none;
   color: #000;
-  opacity: 0.8;
+  background-color: #FFF;
+  opacity: 0.9;
   display: inline-block;
   vertical-align: middle;
-  width: 1.1em;
-  height: 1.1em;
+  width: 16px;
+  height: 16px;
   border: solid 1px transparent;
+}
+
+a.chars.hover {
+  position: relative;
+  border: solid 1px #CCC;
+  padding: 2px;
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+  margin: -10px -10px;
+  z-index: 10000;
+}
+
+a.chars.current {
+  color: #FFF;
+  border: solid 1px #000;
+  background-color: #000;
 }
 
 #char {
@@ -134,47 +151,6 @@ table {
   padding: 1px 2px;
 }
 
-/*.small-0 {
-  font-size: 200%;
+#content {
+  margin: 20px 0;
 }
-
-.small-1 {
-  font-size: 500%;
-}
-
-.small-2 {
-  font-size: 250%;
-}
-
-.small-3 {
-  font-size: 125%;
-}
-
-.small-4 {
-  font-size: 400%;
-}
-
-.small-5 {
-  font-size: 350%;
-}
-
-.small-6 {
-  font-size: 300%;
-}
-
-.small-7 {
-  font-size: 250%;
-}
-
-.small-8 {
-  font-size: 200%;
-}
-
-.small-9 {
-  font-size: 150%;
-}
-
-.small-10 {
-  font-size: 100%;
-}
-*/

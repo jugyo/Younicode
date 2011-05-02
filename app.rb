@@ -1,7 +1,10 @@
 require 'bundler/setup'
 Bundler.require
-require 'erb'
 
 get '/' do
-  erb :index
+  haml :index
+end
+
+get '/:code' do
+  haml :show
 end
