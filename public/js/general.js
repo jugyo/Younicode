@@ -19,7 +19,10 @@ $(function () {
     var code16 = code.toString(16);
 
     window.location.hash = code16;
-    document.title = String.fromCharCode(code);
+    var chr = String.fromCharCode(code);
+    document.title = chr;
+    var status = chr + ' ' + escape(location.href);
+    $('#tweet-link').attr({'href':'http://twitter.com/?status=' + status});
 
     var length = $('.chars').length;
     $('.chars').each(function(index, elem) {
