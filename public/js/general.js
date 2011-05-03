@@ -27,7 +27,7 @@ $(function () {
   };
 
   // mousewheel
-  $('body').mousewheel(function(event, delta) {
+  $('#chars-bar').mousewheel(function(event, delta) {
     var code = $._code - (delta * $._speed);
     if (code < 0) {
       code = 0xffff;
@@ -36,6 +36,7 @@ $(function () {
     }
     $._code = code;
     $.draw();
+    return false;
   });
 
   // loop
