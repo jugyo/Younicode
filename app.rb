@@ -48,6 +48,11 @@ get '/u/:name' do
   haml :user
 end
 
+get '/search' do
+  char = params[:char][0]
+  redirect "/#{char.ord.to_s(16)}"
+end
+
 get '/:code' do
   @code16 = params[:code]
   @code = @code16.to_i(16)

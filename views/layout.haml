@@ -15,6 +15,9 @@
     %ul.actions
       %li
         %a{:href => '/'} Home
+      %li
+        %form{:action => '/search'}
+          %input{:type => 'search', :name => 'char', :placeholder => '♥'}
       - if current_user
         %li= user_link current_user, :image => :m, :show_name => true
         %li
