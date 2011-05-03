@@ -2,8 +2,6 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.4)
-    archive-tar-minitar (0.5.2)
-    columnize (0.3.2)
     faraday (0.6.1)
       addressable (~> 2.2.4)
       multipart-post (~> 1.1.0)
@@ -12,8 +10,6 @@ GEM
       ruby-growl (>= 1.0.1)
     haml (3.0.25)
     ir_b (1.2.0)
-    linecache19 (0.5.11)
-      ruby_core_source (>= 0.1.4)
     mime-types (1.16)
     multi_json (1.0.0)
     multi_xml (0.2.2)
@@ -64,20 +60,10 @@ GEM
       ruby-openid (>= 2.1.8)
     rest-client (1.6.1)
       mime-types (>= 1.16)
-    ruby-debug-base19 (0.11.24)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby_core_source (>= 0.1.4)
-    ruby-debug19 (0.11.6)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby-debug-base19 (>= 0.11.19)
     ruby-growl (3.0)
     ruby-openid (2.1.8)
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
-    ruby_core_source (0.1.4)
-      archive-tar-minitar (>= 0.5.2)
     rubyntlm (0.1.1)
     sequel (3.22.0)
     sinatra (1.2.3)
@@ -94,7 +80,6 @@ DEPENDENCIES
   haml
   ir_b
   omniauth
-  ruby-debug19
   sequel
   sinatra
   sqlite3

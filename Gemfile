@@ -11,5 +11,5 @@ group do
   gem 'sqlite3'
   gem 'g'
   gem 'ir_b'
-  gem 'ruby-debug19'
+  # gem 'ruby-debug19'
 end
