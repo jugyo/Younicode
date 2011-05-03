@@ -44,12 +44,18 @@ $(function () {
     var loopCount = 0;
     $._loop = true;
     var loop = function() {
+      console.log(inc);
       $._code = $._code + inc;
+      if ($._code < 0) {
+        $._code = 0xffff + $._code;
+      } else if ($._code > 0xffff) {
+        $._code = 0 + $._code;
+      }
       $.draw();
       loopCount++;
       if (loopCount % 10 == 0) {
         var _inc = inc * 2;
-        if (_inc <= $._loop_max_speed) {
+        if (Math.abs(_inc) <= $._loop_max_speed) {
           inc = _inc;
         }
       }
