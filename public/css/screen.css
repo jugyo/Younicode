@@ -90,13 +90,24 @@ a:hover {
 
 #header h1 {
   font-size: 200%;
-  color: #666;
   display: inline-block;
   margin-bottom: -2em;
   padding: 10px;
   height: 40px;
   padding-right: 20px;
   border-right: solid 1px #CCC;
+}
+
+#header h1 a {
+  color: #666;
+}
+
+#header h1 a .you {
+  color: red;
+}
+
+#header h1 a .nicode {
+  color: blue;
 }
 
 #header ul.actions {
