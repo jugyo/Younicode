@@ -90,7 +90,7 @@ $(function () {
   if (matches) {
     $._current_code = $._code = parseInt(matches[1], 16);
   }
-  $._size = 23;
+  $._size = 16;
   $._speed = 4;
   $._loop_max_speed = 1024;
 

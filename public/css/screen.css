@@ -71,23 +71,29 @@ table {
 /* Meyer's reset ends here */
 
 #main {
-  text-align: center;
   width: 900px;
   margin: 20px auto;
 }
 
+#left {
+  float: left;
+  width: 280px;
+  border: solid 1px #CCC;
+}
+
+#right {
+  float: right;
+  width: 600px;
+  border: solid 1px #CCC;
+}
+
 .nav {
-  font-size: 16px;
-  color: #FFF;
-  background-color: blue;
-  margin-bottom: -18px;
+  font-size: 24px;
+  color: blue;
+  margin-bottom: -24px;
   border: solid 1px transparent;
   padding: 0 4px;
   height: 16px;
-}
-
-.nav:hover {
-/*  background-color: #999;*/
 }
 
 .nav.left {
@@ -100,7 +106,7 @@ table {
 
 #chars {
   clear: both;
-  font-size: 16px;
+  text-align: center;
 }
 
 a.chars {
@@ -110,12 +116,13 @@ a.chars {
   opacity: 0.9;
   display: inline-block;
   vertical-align: middle;
-  width: 16px;
-  height: 16px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
   border: solid 1px transparent;
 }
 
-a.chars.hover {
+a.chars.hover, a.chars.current {
   position: relative;
   color: #000;
   border: solid 1px #CCC;
@@ -123,25 +130,21 @@ a.chars.hover {
   font-size: 32px;
   width: 32px;
   height: 32px;
-  margin: -10px -10px;
+  margin: -6px;
   z-index: 10000;
 }
 
 a.chars.current {
-  color: #FFF;
-  border: solid 1px red;
-  background-color: red;
+  z-index: 1000;
 }
 
 #char {
-  opacity: 1.0;
-  position: relative;
-  background-color: rgba(100%, 100%, 100%, 0.8);
-  border: solid 1px #CCC;
-  font-size: 200%;
-  margin: 0 -0.2em;
-  padding: 0.2em;
-  z-index: 1000;
+  text-align: center;
+  display: inline-block;
+  padding: 40px;
+  width: 200px;
+  height: 200px;
+  font-size: 200px;
 }
 
 #tweet a {
