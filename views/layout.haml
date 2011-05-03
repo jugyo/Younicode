@@ -1,13 +1,13 @@
 !!!
 %head
   %meta{:charset => "utf-8"}/
-  %title= @title || 'My Unicode'
+  %title= [@char, 'Younicode'].compact.join(' - ')
   %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
   %link{:href => "/css/screen.css?v=1.0", :rel => "stylesheet"}/
   %script{:src => "/js/modernizr-1.6.min.js"}
 %body.home
   #header
-    %h1 My Unicode
+    %h1 Younicode
     %ul.actions
       - if current_user
         %li= user_link current_user, :image => :m, :show_name => true
