@@ -228,3 +228,10 @@ a.not-fav {
 .fav-users {
   margin: 8px 0;
 }
+
+.please-sign-in {
+  padding: 80px 0;
+  background-color: #EEE;
+  text-align: center;
+  font-size: 200%;
+}
