@@ -17,12 +17,10 @@ $(function () {
         _code = 0xffff + _code;
       }
       var chr = String.fromCharCode(_code);
-      $(elem).text(chr);
+      $(elem).text(chr).attr({'href':'/' + _code.toString(16)});
       if (_code == $._current_code) {
-        $(elem).attr({'href':'javascript:void(0)'});
         $(elem).addClass('current');
       } else {
-        $(elem).attr({'href':'/' + _code.toString(16)});
         $(elem).removeClass('current');
       }
     });

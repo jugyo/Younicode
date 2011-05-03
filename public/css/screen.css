@@ -70,6 +70,10 @@ table {
 
 /* Meyer's reset ends here */
 
+a {
+  text-decoration: none;
+}
+
 #main {
   width: 900px;
   margin: 20px auto;
@@ -78,13 +82,13 @@ table {
 #left {
   float: left;
   width: 280px;
-  border: solid 1px #CCC;
+  border: dotted 1px #CCC;
 }
 
 #right {
   float: right;
   width: 600px;
-  border: solid 1px #CCC;
+  border: dotted 1px #CCC;
 }
 
 .nav {
@@ -110,7 +114,6 @@ table {
 }
 
 a.chars {
-  text-decoration: none;
   color: #666;
   background-color: #FFF;
   opacity: 0.9;
@@ -145,16 +148,29 @@ a.chars.current {
   width: 200px;
   height: 200px;
   font-size: 200px;
+  border: solid 4px #CCC;
 }
 
 #tweet a {
   color: #FFF;
   background-color: #01C0BA;
-  text-decoration: none;
   display: inline-block;
   padding: 1px 2px;
 }
 
 #content {
   margin: 20px 0;
+}
+
+.info {
+  font-size: 200%;
+  color: #666;
+}
+
+a.fav {
+  color: #FF5A5A;
+}
+
+a.not-fav {
+  color: #999;
 }

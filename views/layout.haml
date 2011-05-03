@@ -1,11 +1,18 @@
 !!!
 %head
   %meta{:charset => "utf-8"}/
-  %title My Unicode !
+  %title= @title || 'My Unicode'
   %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
-  %link{:href => "css/screen.css?v=1.0", :rel => "stylesheet"}/
-  %script{:src => "js/modernizr-1.6.min.js"}
+  %link{:href => "/css/screen.css?v=1.0", :rel => "stylesheet"}/
+  %script{:src => "/js/modernizr-1.6.min.js"}
 %body.home
+  #header
+    - if current_user
+      = current_user[:name]
+      %a{:href => "/logout"} logout
+    - else
+      %a{:href => "/auth/twitter"} Sign in with Twitter
+
   #main
     .nav.left❮
     .nav.right❯
@@ -14,9 +21,12 @@
     #content
       = yield
 
-  %script{:src => "js/jquery-1.4.4.min.js"}
-  %script{:src => "js/jquery.mousewheel.js"}
-  %script{:src => "js/general.js"}
+    #dashboard
+      
+
+  %script{:src => "/js/jquery-1.4.4.min.js"}
+  %script{:src => "/js/jquery.mousewheel.js"}
+  %script{:src => "/js/general.js"}
   :javascript
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-145539-8']);

@@ -18,7 +18,7 @@ namespace :db do
     DB.create_table? :users do
       primary_key :id
       Integer :twitter_id
-      Integer :login
+      String :name
     end
     DB.add_index :users, :twitter_id, :ignore_errors => true
 
@@ -37,5 +37,6 @@ namespace :db do
     end
     DB.add_index :favorites, :code, :ignore_errors => true
     DB.add_index :favorites, :user_id, :ignore_errors => true
+    DB.add_index :favorites, [:code, :user_id], :unique => true, :ignore_errors => true
   end
 end

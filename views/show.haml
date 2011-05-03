@@ -1,0 +1,13 @@
+#left
+  #char= @char
+
+#right
+  .info
+    - if @fav
+      %a{:href => "/#{@code16}/unfav", :class => 'fav'} ♥
+    - else
+      %a{:href => "/#{@code16}/fav", :class => 'not-fav'} ♥
+    = @favs.count
+  .favs
+    - @favs.each do |fav|
+      - user_link(fav)

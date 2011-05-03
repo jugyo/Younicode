@@ -5,4 +5,11 @@ source "http://rubygems.org"
 gem 'sinatra'
 gem 'haml'
 gem 'sequel'
-gem 'sqlite3', :group => :development
+gem 'omniauth'
+
+group do
+  gem 'sqlite3'
+  gem 'g'
+  gem 'ir_b'
+  gem 'ruby-debug19'
+end
