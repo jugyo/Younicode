@@ -101,4 +101,18 @@ helpers do
       end
     end
   end
+
+  def user_fav_chars(favs)
+    capture_haml do
+      haml_tag :ul, :class => 'user-fav-chars' do
+        favs.each do |fav|
+          haml_tag :li do
+            haml_tag :a, :href => "/#{fav[:code].to_s(16)}" do
+              haml_concat fav[:code].chr('utf-8')
+            end
+          end
+        end
+      end
+    end
+  end
 end

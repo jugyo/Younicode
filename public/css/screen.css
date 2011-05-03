@@ -296,7 +296,6 @@ ul.user-info li {
   vertical-align: middle;
   height: 50px;
   line-height: 50px;
-  font-size: 110%;
   color: #666;
   display: inline-block;
 }
@@ -310,10 +309,12 @@ ul.user-info li img.user-icon {
   vertical-align: middle;
 }
 
-ul.fav-chars {
+/* -------- user-fav-chars -------- */
+
+ul.user-fav-chars {
 }
 
-ul.fav-chars li {
+ul.user-fav-chars li {
   vertical-align: middle;
   font-size: 32px;
   height: 32px;
@@ -323,19 +324,19 @@ ul.fav-chars li {
   border: solid 1px yellow;
 }
 
-ul.fav-chars li:hover {
+ul.user-fav-chars li:hover {
   font-size: 40px;
   height: 40px;
   width: 40px;
   margin: -4px -2px -2px -4px;
 }
 
-ul.fav-chars li a {
+ul.user-fav-chars li a {
   opacity: 0.7;
   display: block;
   color: #000;
 }
 
-ul.fav-chars li a:hover {
+ul.user-fav-chars li a:hover {
   opacity: 1.0;
 }

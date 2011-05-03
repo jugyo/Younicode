@@ -4,11 +4,8 @@
       = user_link @user, :image => :n, :show_name => true
     %li
       Twitter :
-      %a{:href => "http://twitter.com/#{@user[:name]}"}= @user[:name]
+      %a{:href => "http://twitter.com/#{@user[:name]}", :target => '_blank'}= @user[:name]
 
   %h2 ♥ #{@favs.count}
 
-  %ul.fav-chars
-    - @favs.each do |fav|
-      %li
-        %a{:href => "/#{fav[:code].to_s(16)}"}= fav[:code].chr('utf-8')
+  = user_fav_chars(@favs)
