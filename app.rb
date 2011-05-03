@@ -37,6 +37,13 @@ get '/about/sign_in' do
   haml :about_sign_in
 end
 
+get '/u/:name' do
+  @user = DB[:users].filter('name = ?', params[:name]).first
+  halt 404 unless @user
+  @favs = DB[:favorites].filter('user_id = ?', @user[:id]).order('code')
+  haml :user
+end
+
 get '/:code' do
   @code16 = params[:code]
   @code = @code16.to_i(16)

@@ -132,7 +132,7 @@ a:hover {
   border-left: solid 1px #CCC;
 }
 
-#header ul.actions li img {
+#header ul.actions li img.user-icon {
   margin: 0 4px;
   vertical-align: middle;
 }
@@ -276,4 +276,66 @@ a.not-fav {
 .please-sign-in p.note {
   color: #333;
   font-size: 50%;
+}
+
+/* -------- user-page -------- */
+
+.user-page h2 {
+  color: #999;
+  font-size: 200%;
+  margin: 20px 0 10px 0;
+}
+
+ul.user-info {
+}
+
+ul.user-info li {
+  border-left: solid 1px #CCC;
+  margin: 0;
+  padding: 20px;
+  vertical-align: middle;
+  height: 50px;
+  line-height: 50px;
+  font-size: 110%;
+  color: #666;
+  display: inline-block;
+}
+
+ul.user-info li a.user-link {
+  font-size: 140%;
+}
+
+ul.user-info li img.user-icon {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+ul.fav-chars {
+}
+
+ul.fav-chars li {
+  vertical-align: middle;
+  font-size: 32px;
+  height: 32px;
+  width: 32px;
+  margin: 0 2px 2px 0;
+  display: inline-block;
+  border: solid 1px yellow;
+}
+
+ul.fav-chars li:hover {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  margin: -4px -2px -2px -4px;
+}
+
+ul.fav-chars li a {
+  opacity: 0.7;
+  display: block;
+  color: #000;
+}
+
+ul.fav-chars li a:hover {
+  opacity: 1.0;
 }
