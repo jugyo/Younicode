@@ -83,10 +83,11 @@ $(function () {
     });
   };
 
-  $._code = 0x2588;
-  var matches = location.pathname.match(/^\/([0-9a-f]+)/i);
+  var matches = location.pathname.match(/^\/([0-9a-f]{0,4})$/i);
   if (matches) {
     $._current_code = $._code = parseInt(matches[1], 16);
+  } else {
+    $._code = Math.random() * 0xffff;
   }
   $._size = 16;
   $._speed = 4;
