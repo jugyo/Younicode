@@ -21,7 +21,11 @@ get '/auth/:name/callback' do
   auth = request.env['omniauth.auth']
   dataset = DB[:users].filter('twitter_id = ?', auth["uid"])
   if dataset.empty?
-    DB[:users].insert(:twitter_id => auth["uid"], :name => auth["user_info"]["nickname"])
+    DB[:users].insert(
+      :twitter_id => auth["uid"],
+      :name => auth["user_info"]["nickname"],
+      :created_at => Time.now
+    )
   end
   user = dataset.first
   session[:user_id] = user[:id]
@@ -59,7 +63,11 @@ get '/:code/fav' do
   unless current_user
     haml :about_sign_in
   else
-    DB[:favorites].insert(:user_id => current_user[:id], :code => params[:code].to_i(16))
+    DB[:favorites].insert(
+      :user_id => current_user[:id],
+      :code => params[:code].to_i(16),
+      :created_at => Time.now
+    )
     redirect "/#{params[:code]}"
   end
 end
