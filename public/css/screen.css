@@ -124,7 +124,9 @@ a:hover {
 }
 
 #header ul.actions li {
+  vertical-align: middle;
   height: 40px;
+  line-height: 24px;
   padding: 10px;
   display: inline-block;
   border-left: solid 1px #CCC;
