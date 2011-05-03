@@ -7,11 +7,15 @@
   %script{:src => "/js/modernizr-1.6.min.js"}
 %body.home
   #header
-    - if current_user
-      = current_user[:name]
-      %a{:href => "/logout"} logout
-    - else
-      %a{:href => "/auth/twitter"} Sign in with Twitter
+    %h1 My Unicode
+    %ul.actions
+      - if current_user
+        %li= user_link current_user, :image => :m, :show_name => true
+        %li
+          %a{:href => "/logout"} logout
+      - else
+        %li
+          %a{:href => "/auth/twitter"} Sign in with Twitter
 
   #main
     .nav.left❮

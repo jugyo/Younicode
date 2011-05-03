@@ -7,7 +7,7 @@
       %a{:href => "/#{@code16}/unfav", :class => 'fav'} ♥
     - else
       %a{:href => "/#{@code16}/fav", :class => 'not-fav'} ♥
-    = @favs.count
-  .favs
+    .fav-count= @favs.count
+  .fav-users
     - @favs.each do |fav|
-      - user_link(fav)
+      = user_link fav, :image => :m
