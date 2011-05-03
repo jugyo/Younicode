@@ -27,4 +27,7 @@
 
   .fav-users
     - @favs.each do |fav|
-      = user_link fav, :image => :n
+      .fav-user><
+        = user_link fav, :image => :n
+    - (40 - @favs.count).times do
+      .dummy-fav-user><

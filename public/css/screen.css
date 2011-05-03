@@ -83,6 +83,10 @@ a:hover {
   opacity: 0.7;
 }
 
+.clear {
+  clear:  both;
+}
+
 img.user-icon {
   vertical-align: middle;
 }
@@ -149,7 +153,7 @@ img.user-icon {
   color: #999;
   text-align: right;
   width: 900px;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 
 #footer a.user-link {
@@ -269,6 +273,19 @@ a.not-fav {
 .fav-users {
   clear: both;
   margin: 16px 0;
+}
+
+.fav-users .user-icon {
+  margin: 0 2px 2px 0;
+}
+
+.fav-users .fav-user, .fav-users .dummy-fav-user {
+  display: inline-block;
+  border: solid 1px #DDD;
+  height: 48px;
+  width: 48px;
+  vertical-align: middle;
+  margin: 0 4px 4px 0;
 }
 
 ul.char-info {
