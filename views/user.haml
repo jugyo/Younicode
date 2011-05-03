@@ -10,4 +10,4 @@
 
   .user-fav-chars
     - @favs.each do |fav|
-      %a{:href => "/#{fav[:code].to_s(16)}"}= fav[:code].chr('utf-8')
+      %a{:href => "/#{fav[:code].to_s(16)}"}><= fav[:code].chr('utf-8')

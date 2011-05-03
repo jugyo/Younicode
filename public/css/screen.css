@@ -360,6 +360,7 @@ ul.user-info li img.user-icon {
 /* -------- user-fav-chars -------- */
 
 .user-fav-chars a {
+  position: relative;
   color: #000;
   text-align: center;
   opacity: 0.8;
@@ -368,7 +369,7 @@ ul.user-info li img.user-icon {
   display: inline-block;
   height: 40px;
   width: 40px;
-  margin: 0 2px 2px 0;
+  margin: 0 4px 4px 0;
   background-color: #EEE;
   border: solid 1px #EEE;
 }
@@ -378,7 +379,8 @@ ul.user-info li img.user-icon {
   font-size: 48px;
   height: 48px;
   width: 48px;
-  margin: -4px -2px -2px -4px;
+  margin: -4px 0 0 -4px;
   border: solid 1px #CCC;
   background-color: #FFF;
+  z-index: 10000;
 }
