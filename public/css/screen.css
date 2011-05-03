@@ -83,6 +83,10 @@ a:hover {
   opacity: 0.7;
 }
 
+img.user-icon {
+  vertical-align: middle;
+}
+
 #header {
   width: 900px;
   margin: 4px auto;
@@ -134,12 +138,22 @@ a:hover {
 
 #header ul.actions li img.user-icon {
   margin: 0 4px;
-  vertical-align: middle;
 }
 
 #main {
   width: 900px;
   margin: 40px auto;
+}
+
+#footer {
+  color: #999;
+  text-align: right;
+  width: 900px;
+  margin: 40px auto;
+}
+
+#footer a.user-link {
+  color: #333;
 }
 
 #left {
@@ -290,7 +304,7 @@ ul.user-info {
 }
 
 ul.user-info li {
-  border-right: solid 1px #CCC;
+  border-right: solid 1px #AAA;
   margin-right: 20px;
   padding: 20px 20px 20px 0;
   vertical-align: middle;
@@ -306,7 +320,6 @@ ul.user-info li a.user-link {
 
 ul.user-info li img.user-icon {
   margin-right: 10px;
-  vertical-align: middle;
 }
 
 /* -------- user-fav-chars -------- */
