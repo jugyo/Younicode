@@ -44,7 +44,7 @@ end
 get '/u/:name' do
   @user = DB[:users].filter('name = ?', params[:name]).first
   halt 404 unless @user
-  @favs = DB[:favorites].filter('user_id = ?', @user[:id]).order('created_at')
+  @favs = DB[:favorites].filter('user_id = ?', @user[:id])
   haml :user
 end
 
