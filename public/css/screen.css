@@ -148,6 +148,10 @@ a:hover {
   float: right;
 }
 
+#chars-bar {
+  min-height: 40px;
+}
+
 #chars {
   clear: both;
   text-align: center;
@@ -234,4 +238,13 @@ a.not-fav {
   background-color: #EEE;
   text-align: center;
   font-size: 200%;
+}
+
+.please-sign-in p {
+  margin: 0.5em 0;
+}
+
+.please-sign-in p.note {
+  color: #333;
+  font-size: 50%;
 }

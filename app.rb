@@ -30,7 +30,11 @@ end
 
 get '/logout' do
   session.delete(:user_id)
-  redirect '/'
+  redirect request.env['HTTP_REFERER'] || '/'
+end
+
+get '/about/sign_in' do
+  haml :about_sign_in
 end
 
 get '/:code' do
@@ -46,7 +50,7 @@ end
 
 get '/:code/fav' do
   unless current_user
-    haml :please_login
+    haml :about_sign_in
   else
     DB[:favorites].insert(:user_id => current_user[:id], :code => params[:code].to_i(16))
     redirect "/#{params[:code]}"
@@ -55,7 +59,7 @@ end
 
 get '/:code/unfav' do
   unless current_user
-    haml :please_login
+    haml :about_sign_in
   else
     DB[:favorites].filter(:user_id => current_user[:id], :code => params[:code].to_i(16)).delete
     redirect "/#{params[:code]}"
