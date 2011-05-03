@@ -133,11 +133,15 @@ a:hover {
 
 .nav {
   font-size: 24px;
-  color: blue;
+  color: #999;
   margin-bottom: -24px;
   border: solid 1px transparent;
   padding: 0 4px;
   height: 16px;
+}
+
+.nav:hover {
+  color: blue;
 }
 
 .nav.left {
@@ -193,7 +197,11 @@ a.chars.current {
   width: 200px;
   height: 200px;
   font-size: 200px;
-  border: solid 4px #CCC;
+  border: solid 3px #CCC;
+}
+
+#char .box {
+  border: dashed 1px #DDD;
 }
 
 #tweet a {
