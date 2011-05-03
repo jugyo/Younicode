@@ -281,7 +281,7 @@ a.not-fav {
 
 .fav-users .fav-user, .fav-users .dummy-fav-user {
   display: inline-block;
-  border: solid 1px #DDD;
+  border: solid 1px #EEE;
   height: 48px;
   width: 48px;
   vertical-align: middle;
