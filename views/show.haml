@@ -4,12 +4,20 @@
       = @char
 
 #right
-  .info
+  .info.right
+    %a{:href => 'http://twitter.com/share',
+       :class => 'twitter-share-button',
+       :'data-text' => @char,
+       :'data-count' => 'horizontal'} Tweet
+    %script{:type => 'text/javascript', :src => 'http://platform.twitter.com/widgets.js'}
+
+  .info.fav-count
     - if @fav
       %a{:href => "/#{@code16}/unfav", :class => 'fav'} ♥
     - else
       %a{:href => "/#{@code16}/fav", :class => 'not-fav'} ♥
-    .fav-count= @favs.count
+    = @favs.count
+
   .fav-users
     - @favs.each do |fav|
-      = user_link fav, :image => :m
+      = user_link fav, :image => :n
