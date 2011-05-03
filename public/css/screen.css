@@ -359,35 +359,26 @@ ul.user-info li img.user-icon {
 
 /* -------- user-fav-chars -------- */
 
-ul.user-fav-chars {
-}
-
-ul.user-fav-chars li {
+.user-fav-chars a {
+  color: #000;
+  text-align: center;
+  opacity: 0.8;
   vertical-align: middle;
   font-size: 40px;
+  display: inline-block;
   height: 40px;
   width: 40px;
   margin: 0 2px 2px 0;
-  display: inline-block;
   background-color: #EEE;
   border: solid 1px #EEE;
 }
 
-ul.user-fav-chars li:hover {
+.user-fav-chars a:hover {
+  opacity: 1.0;
   font-size: 48px;
   height: 48px;
   width: 48px;
   margin: -4px -2px -2px -4px;
   border: solid 1px #CCC;
   background-color: #FFF;
-}
-
-ul.user-fav-chars li a {
-  opacity: 0.8;
-  display: block;
-  color: #000;
-}
-
-ul.user-fav-chars li a:hover {
-  opacity: 1.0;
 }

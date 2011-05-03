@@ -8,4 +8,6 @@
 
   %h2 ♥ #{@favs.count}
 
-  = user_fav_chars(@favs)
+  .user-fav-chars
+    - @favs.each do |fav|
+      %a{:href => "/#{fav[:code].to_s(16)}"}= fav[:code].chr('utf-8')
