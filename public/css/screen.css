@@ -228,10 +228,6 @@ a.chars.current {
   border-radius: 8px;
 }
 
-.info.right {
-  float: right;
-}
-
 a.fav {
   color: #FF5A5A;
 }
