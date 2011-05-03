@@ -208,6 +208,13 @@ img.user-icon {
   text-align: center;
 }
 
+#char-code {
+  font-size: 80%;
+  color: #999;
+  margin-top: 8px;
+  text-align: center;
+}
+
 a.chars {
   color: #000;
   background-color: #EEE;

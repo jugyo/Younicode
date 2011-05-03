@@ -7,6 +7,8 @@ $(function () {
   $.draw = function() {
     var code = $.code();
 
+    $('#char-code').text('#' + code.toString(16));
+
     var length = $('.chars').length;
     $('.chars').each(function(index, elem) {
       var offset = -$._size + index;
