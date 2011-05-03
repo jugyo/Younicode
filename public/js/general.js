@@ -83,7 +83,7 @@ $(function () {
     });
   };
 
-  var matches = location.pathname.match(/^\/([0-9a-f]{0,4})$/i);
+  var matches = location.pathname.match(/^\/([0-9a-f]{1,4})$/i);
   if (matches) {
     $._current_code = $._code = parseInt(matches[1], 16);
   } else {
