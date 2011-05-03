@@ -97,7 +97,7 @@ $(function () {
   }
   $._size = 16;
   $._speed = 4;
-  $._loop_max_speed = 1024;
+  $._loop_max_speed = 128;
 
   $.setup();
   $.draw();
