@@ -290,9 +290,9 @@ ul.user-info {
 }
 
 ul.user-info li {
-  border-left: solid 1px #CCC;
-  margin: 0;
-  padding: 20px;
+  border-right: solid 1px #CCC;
+  margin-right: 20px;
+  padding: 20px 20px 20px 0;
   vertical-align: middle;
   height: 50px;
   line-height: 50px;
@@ -316,23 +316,26 @@ ul.user-fav-chars {
 
 ul.user-fav-chars li {
   vertical-align: middle;
-  font-size: 32px;
-  height: 32px;
-  width: 32px;
-  margin: 0 2px 2px 0;
-  display: inline-block;
-  border: solid 1px yellow;
-}
-
-ul.user-fav-chars li:hover {
   font-size: 40px;
   height: 40px;
   width: 40px;
+  margin: 0 2px 2px 0;
+  display: inline-block;
+  background-color: #EEE;
+  border: solid 1px #EEE;
+}
+
+ul.user-fav-chars li:hover {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
   margin: -4px -2px -2px -4px;
+  border: solid 1px #CCC;
+  background-color: #FFF;
 }
 
 ul.user-fav-chars li a {
-  opacity: 0.7;
+  opacity: 0.8;
   display: block;
   color: #000;
 }
