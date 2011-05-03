@@ -166,6 +166,10 @@ img.user-icon {
   width: 590px;
 }
 
+#content {
+  margin: 20px 0;
+}
+
 .nav {
   font-size: 24px;
   color: #999;
@@ -225,10 +229,12 @@ a.chars.current {
   z-index: 1000;
 }
 
+/* -------- char-show -------- */
+
 #char {
   text-align: center;
   display: inline-block;
-  padding: 40px;
+  padding: 37px;
   width: 200px;
   height: 200px;
   font-size: 200px;
@@ -237,17 +243,6 @@ a.chars.current {
 
 #char .box {
   border: dashed 1px #DDD;
-}
-
-#tweet a {
-  color: #FFF;
-  background-color: #01C0BA;
-  display: inline-block;
-  padding: 1px 2px;
-}
-
-#content {
-  margin: 20px 0;
 }
 
 .info {
@@ -275,6 +270,24 @@ a.not-fav {
   clear: both;
   margin: 16px 0;
 }
+
+ul.char-info {
+  margin: 10px 0;
+  text-align: right;
+  color: #999;
+  font-size: 20px;
+}
+
+ul.char-info li {
+  margin: 4px 0;
+}
+
+ul.char-info input[type=text] {
+  font-size: 20px;
+  width: 6em;
+}
+
+/* -------- please-sign-in -------- */
 
 .please-sign-in {
   padding: 80px 0;

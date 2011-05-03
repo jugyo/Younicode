@@ -2,6 +2,13 @@
   #char
     .box
       = @char
+  %ul.char-info
+    %li
+      Integer :
+      %input{:type => :text, :readonly => true, :value => "0x#{@code16.rjust(4, '0')}", :onclick => '$(this).select();'}
+    %li
+      String :
+      %input{:type => :text, :readonly => true, :value => "\"\\u#{@code16.rjust(4, '0')}\"", :onclick => '$(this).select();'}
 
 #right
   .info.fav-count
