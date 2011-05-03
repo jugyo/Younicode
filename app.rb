@@ -84,9 +84,9 @@ helpers do
 
   def user_link(user, options = {})
     capture_haml do
-      haml_tag :a, :href => "/u/#{user[:name]}" do
+      haml_tag :a, :href => "/u/#{user[:name]}", :class => 'user-link' do
         if options[:image]
-          haml_tag :img, :src => "http://img.tweetimag.es/i/#{user[:name]}_#{options[:image]}"
+          haml_tag :img, :src => "http://img.tweetimag.es/i/#{user[:name]}_#{options[:image]}", :class => 'user-icon'
         end
         if options[:show_name]
           haml_concat user[:name]
