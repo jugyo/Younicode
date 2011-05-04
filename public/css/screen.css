@@ -104,11 +104,12 @@ img.user-icon {
 
 #header h1 {
   font-size: 200%;
+  font-weight: bold;
   display: inline-block;
   margin-bottom: -2em;
-  padding: 10px;
+  padding: 10px 20px;
+  margin-left: -20px;
   height: 40px;
-  padding-right: 20px;
   border-right: solid 1px #CCC;
 }
 
@@ -118,7 +119,7 @@ img.user-icon {
 }
 
 #header h1 a .you {
-  color: red;
+  color: #07C900;
 }
 
 #header h1 a .nicode {
@@ -135,6 +136,7 @@ img.user-icon {
 #header ul.actions {
   text-align: right;
   color: #666;
+  margin-right: -10px;
 }
 
 #header ul.actions li {
