@@ -3,7 +3,7 @@
 %ul.recnet-favs
   - @favs.each do |fav|
     %li
-      %a.char-link{:href => ''}
+      %a.char-link{:href => "/#{fav[:code].to_s(16)}"}
         = fav[:code].chr('utf-8')
       ♥
       = user_link fav, :image => :m
