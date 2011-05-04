@@ -14,7 +14,7 @@ before do
 end
 
 get '/' do
-  @favs = DB[:favorites].join(:users, :id => :user_id).limit(100)
+  @favs = DB[:favorites].join(:users, :id => :user_id).limit(300)
   haml :index
 end
 
