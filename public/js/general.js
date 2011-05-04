@@ -13,10 +13,10 @@ $(function () {
     $('.chars').each(function(index, elem) {
       var offset = -$._size + index;
       var _code = code + offset;
-      if (_code > 0xffff) {
-        _code = _code - 0xffff;
+      if (_code >= 0x10000) {
+        _code = _code - 0x10000;
       } else if (_code < 0) {
-        _code = 0xffff + _code;
+        _code = 0x10000 + _code;
       }
       var chr = String.fromCharCode(_code);
       $(elem).text(chr).attr({'href':'/' + _code.toString(16)});
@@ -50,8 +50,8 @@ $(function () {
       console.log(inc);
       $._code = $._code + inc;
       if ($._code < 0) {
-        $._code = 0xffff + $._code;
-      } else if ($._code > 0xffff) {
+        $._code = 0x10000 + $._code;
+      } else if ($._code >= 0x10000) {
         $._code = 0 + $._code;
       }
       $.draw();
