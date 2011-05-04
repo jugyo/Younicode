@@ -32,5 +32,12 @@ namespace :db do
     DB.add_index :favorites, :code, :ignore_errors => true
     DB.add_index :favorites, :user_id, :ignore_errors => true
     DB.add_index :favorites, [:code, :user_id], :unique => true, :ignore_errors => true
+
+    DB.create_table? :histories do
+      primary_key :id
+      Integer :code
+      Integer :views
+    end
+    DB.add_index :histories, :code, :ignore_errors => true
   end
 end
