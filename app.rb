@@ -53,17 +53,6 @@ get '/search' do
   redirect "/#{char.ord.to_s(16)}"
 end
 
-get '/:code' do
-  @code16 = params[:code]
-  @code = @code16.to_i(16)
-  @char = @code.chr('utf-8')
-  @favs = DB[:favorites].filter('code = ?', @code)
-  @fav = @favs.filter('user_id = ?', current_user[:id]).count > 0 if current_user
-  @favs = @favs.join(:users, :id => :user_id)
-
-  haml :show
-end
-
 get '/:code/fav' do
   unless current_user
     haml :about_sign_in
@@ -84,6 +73,17 @@ get '/:code/unfav' do
     DB[:favorites].filter(:user_id => current_user[:id], :code => params[:code].to_i(16)).delete
     redirect "/#{params[:code]}"
   end
+end
+
+get '/:code' do
+  @code16 = params[:code]
+  @code = @code16.to_i(16)
+  @char = @code.chr('utf-8')
+  @favs = DB[:favorites].filter('code = ?', @code)
+  @fav = @favs.filter('user_id = ?', current_user[:id]).count > 0 if current_user
+  @favs = @favs.join(:users, :id => :user_id)
+
+  haml :show
 end
 
 helpers do
