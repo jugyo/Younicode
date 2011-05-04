@@ -17,6 +17,17 @@ get '/' do
   haml :index
 end
 
+get '/:code' do
+  pass unless params[:code] =~ /^[0-9a-f]{1,4}$/i
+  @code16 = params[:code]
+  @code = @code16.to_i(16)
+  @char = @code.chr('utf-8')
+  @favs = DB[:favorites].filter('code = ?', @code)
+  @fav = @favs.filter('user_id = ?', current_user[:id]).count > 0 if current_user
+  @favs = @favs.join(:users, :id => :user_id)
+  haml :show
+end
+
 get '/auth/:name/callback' do
   auth = request.env['omniauth.auth']
   dataset = DB[:users].filter('twitter_id = ?', auth["uid"])
@@ -73,17 +84,6 @@ get '/:code/unfav' do
     DB[:favorites].filter(:user_id => current_user[:id], :code => params[:code].to_i(16)).delete
     redirect "/#{params[:code]}"
   end
-end
-
-get '/:code' do
-  @code16 = params[:code]
-  @code = @code16.to_i(16)
-  @char = @code.chr('utf-8')
-  @favs = DB[:favorites].filter('code = ?', @code)
-  @fav = @favs.filter('user_id = ?', current_user[:id]).count > 0 if current_user
-  @favs = @favs.join(:users, :id => :user_id)
-
-  haml :show
 end
 
 helpers do
