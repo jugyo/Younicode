@@ -209,6 +209,18 @@ img.user-icon {
   min-height: 40px;
 }
 
+#chars-bar .hint {
+  margin: 4px 24px -1em 0;
+  color: #999;
+  opacity: 0.6;
+  font-size: 80%;
+  text-align: right;
+}
+
+#chars-bar:hover .hint {
+  opacity: 1.0;
+}
+
 #chars {
   clear: both;
   text-align: center;
