@@ -120,6 +120,17 @@ helpers do
     end
   end
 
+  def char_link(code)
+    capture_haml do
+      haml_tag :a, :href => "/#{code.to_s(16)}", :class => 'char-link' do
+        begin
+          haml_concat code.chr('utf-8')
+        rescue ArgumentError
+        end
+      end
+    end
+  end
+
   def record_history(code)
     dataset = DB[:histories].filter('code = ?', code)
     if history = dataset.first
