@@ -14,6 +14,7 @@ before do
 end
 
 get '/' do
+  @favs = DB[:favorites].order(:created_at.desc).join(:users, :id => :user_id).limit(100)
   haml :index
 end
 
