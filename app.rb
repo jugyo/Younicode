@@ -10,8 +10,8 @@ use Rack::Session::Cookie
 use OmniAuth::Strategies::Twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
 
 get '/' do
-  @favs = DB[:favorites].join(:users, :id => :user_id).order(:created_at.qualify(:favorites).desc).limit(140)
-  @histories = DB[:histories].order(:updated_at.desc).limit(140)
+  @favs = DB[:favorites].join(:users, :id => :user_id).order(:created_at.qualify(:favorites).desc).limit(70)
+  @histories = DB[:histories].order(:updated_at.desc).limit(108)
   haml :index
 end
 
