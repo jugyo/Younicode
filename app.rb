@@ -19,6 +19,9 @@ get '/:code' do
 
   @code16 = params[:code]
   @code = @code16.to_i(16)
+
+  record_history(@code)
+
   @char = @code.chr('utf-8')
   @favs = DB[:favorites].filter('code = ?', @code)
   @fav = @favs.filter('user_id = ?', current_user[:id]).count > 0 if current_user
@@ -113,6 +116,15 @@ helpers do
           haml_concat user[:name]
         end
       end
+    end
+  end
+
+  def record_history(code)
+    dataset = DB[:histories].filter('code = ?', code)
+    if history = dataset.first
+      dataset.update(:views => history[:views] + 1)
+    else
+      DB[:histories].insert(:code => code, :views => 1)
     end
   end
 end
