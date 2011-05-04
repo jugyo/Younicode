@@ -191,10 +191,15 @@ img.user-icon {
   border: solid 1px transparent;
   padding: 0 4px;
   height: 16px;
+  opacity: 0.6;
+}
+
+#chars-bar:hover .nav {
+  color: blue;
 }
 
 .nav:hover {
-  color: blue;
+  opacity: 1.0;
 }
 
 .nav.left {
