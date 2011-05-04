@@ -11,7 +11,7 @@ use OmniAuth::Strategies::Twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CON
 
 get '/' do
   @favs = DB[:favorites].join(:users, :id => :user_id).order(:created_at.qualify(:favorites).desc).limit(70)
-  @histories = DB[:histories].order(:updated_at.desc).limit(108)
+  @histories = DB[:histories].order(:updated_at.desc).limit(180)
   haml :index
 end
 
