@@ -212,6 +212,7 @@ img.user-icon {
 #chars {
   clear: both;
   text-align: center;
+  height: 1.6em;
 }
 
 #char-code {
