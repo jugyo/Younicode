@@ -13,8 +13,8 @@ namespace :db do
     end
   end
 
-  desc 'migrate'
-  task :migrate => :init do
+  desc 'create all'
+  task :create_all => :init do
     DB.create_table? :users do
       primary_key :id
       Integer :twitter_id
