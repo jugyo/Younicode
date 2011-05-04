@@ -9,17 +9,14 @@ use Rack::Session::Cookie
 # NOTE: heroku config:add TWITTER_CONSUMER_KEY=xxxxxxxxx TWITTER_CONSUMER_SECRET=xxxxxxxxxxx
 use OmniAuth::Strategies::Twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
 
-before do
-  validates_code
-end
-
 get '/' do
   @favs = DB[:favorites].join(:users, :id => :user_id).limit(300)
   haml :index
 end
 
 get '/:code' do
-  pass unless params[:code] =~ /^[0-9a-f]{1,4}$/i
+  pass unless valid_code(params[:code])
+
   @code16 = params[:code]
   @code = @code16.to_i(16)
   @char = @code.chr('utf-8')
@@ -27,6 +24,32 @@ get '/:code' do
   @fav = @favs.filter('user_id = ?', current_user[:id]).count > 0 if current_user
   @favs = @favs.join(:users, :id => :user_id)
   haml :show
+end
+
+get '/:code/fav' do
+  pass unless valid_code(params[:code])
+
+  unless current_user
+    haml :about_sign_in
+  else
+    DB[:favorites].insert(
+      :user_id => current_user[:id],
+      :code => params[:code].to_i(16),
+      :created_at => Time.now
+    )
+    redirect "/#{params[:code]}"
+  end
+end
+
+get '/:code/unfav' do
+  pass unless valid_code(params[:code])
+
+  unless current_user
+    haml :about_sign_in
+  else
+    DB[:favorites].filter(:user_id => current_user[:id], :code => params[:code].to_i(16)).delete
+    redirect "/#{params[:code]}"
+  end
 end
 
 get '/auth/:name/callback' do
@@ -65,28 +88,6 @@ get '/search' do
   redirect "/#{char.ord.to_s(16)}"
 end
 
-get '/:code/fav' do
-  unless current_user
-    haml :about_sign_in
-  else
-    DB[:favorites].insert(
-      :user_id => current_user[:id],
-      :code => params[:code].to_i(16),
-      :created_at => Time.now
-    )
-    redirect "/#{params[:code]}"
-  end
-end
-
-get '/:code/unfav' do
-  unless current_user
-    haml :about_sign_in
-  else
-    DB[:favorites].filter(:user_id => current_user[:id], :code => params[:code].to_i(16)).delete
-    redirect "/#{params[:code]}"
-  end
-end
-
 helpers do
   include Haml::Helpers
 
@@ -98,9 +99,8 @@ helpers do
     @current_user
   end
 
-  def validates_code
-    return unless params[:code]
-    halt 404 unless params[:code] =~ /^[0-9a-f]+$/i
+  def valid_code(code)
+    code =~ /^[0-9a-f]+$/i
   end
 
   def user_link(user, options = {})
