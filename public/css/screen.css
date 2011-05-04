@@ -193,15 +193,10 @@ img.user-icon {
   border: solid 1px transparent;
   padding: 0 4px;
   height: 16px;
-  opacity: 0.6;
 }
 
 #chars-bar:hover .nav {
   color: blue;
-}
-
-.nav:hover {
-  opacity: 1.0;
 }
 
 .nav.left {
@@ -213,23 +208,23 @@ img.user-icon {
 }
 
 #chars-bar {
-  min-height: 40px;
+  min-height: 60px;
+  opacity: 0.5;
+}
+
+#chars-bar:hover {
+  opacity: 1.0;
 }
 
 #chars-bar ul.hint {
   margin: 8px 24px -1em 0;
   color: #999;
-  opacity: 0.6;
   font-size: 80%;
   text-align: right;
 }
 
 #chars-bar ul.hint a {
   color: #999;
-}
-
-#chars-bar:hover ul.hint {
-  opacity: 1.0;
 }
 
 #chars-bar:hover ul.hint a {
