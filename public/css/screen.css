@@ -209,29 +209,40 @@ img.user-icon {
   min-height: 40px;
 }
 
-#chars-bar .hint {
-  margin: 4px 24px -1em 0;
+#chars-bar ul.hint {
+  margin: 8px 24px -1em 0;
   color: #999;
   opacity: 0.6;
   font-size: 80%;
   text-align: right;
 }
 
-#chars-bar:hover .hint {
+#chars-bar ul.hint a {
+  color: #999;
+}
+
+#chars-bar:hover ul.hint {
   opacity: 1.0;
+}
+
+#chars-bar:hover ul.hint a {
+  color: blue;
+}
+
+#chars-bar ul.hint li {
+  display: inline-block;
+  margin-left: 16px;
+}
+
+#chars-bar ul.hint li #char-code {
+  font-family: monospace;
+  display: inline-block;
 }
 
 #chars {
   clear: both;
   text-align: center;
   height: 1.6em;
-}
-
-#char-code {
-  font-size: 80%;
-  color: #999;
-  margin-top: 12px;
-  text-align: center;
 }
 
 a.chars {

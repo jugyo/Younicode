@@ -34,9 +34,13 @@
       .nav.left❮
       .nav.right❯
       #chars
-      .hint
-        ↺ You can also use mouse wheel
-      #char-code
+      %ul.hint
+        %li
+          #char-code
+        %li
+          %a{:href => 'javascript:void(0)', :onclick => '$._code = Math.random() * 0xffff; $.draw()'} random
+        %li
+          ↺ You can also use mouse wheel
 
     #content
       = yield
