@@ -122,9 +122,9 @@ helpers do
   def record_history(code)
     dataset = DB[:histories].filter('code = ?', code)
     if history = dataset.first
-      dataset.update(:views => history[:views] + 1)
+      dataset.update(:views => history[:views] + 1, :updated_at => Time.now)
     else
-      DB[:histories].insert(:code => code, :views => 1)
+      DB[:histories].insert(:code => code, :views => 1, :updated_at => Time.now)
     end
   end
 end

@@ -37,6 +37,7 @@ namespace :db do
       primary_key :id
       Integer :code
       Integer :views
+      Time :updated_at
     end
     DB.add_index :histories, :code, :ignore_errors => true
   end
