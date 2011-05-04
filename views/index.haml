@@ -1,4 +1,4 @@
-%h2 Recent
+%h2 Favorites ♥
 
 %ul.recnet-favs
   - @favs.each do |fav|
@@ -7,3 +7,11 @@
         = fav[:code].chr('utf-8')
       ♥
       = user_link fav, :image => :m
+
+%h2 Views ☺
+
+%ul.recnet-views
+  - @histories.each do |history|
+    %li
+      %a.char-link{:href => "/#{history[:code].to_s(16)}"}
+        = history[:code].chr('utf-8')
