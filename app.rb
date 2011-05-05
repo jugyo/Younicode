@@ -17,6 +17,7 @@ end
 
 get '/:code' do
   pass unless valid_code(params[:code])
+  redirect "/#{params[:code].rjust(4, '0')}" if params[:code].size < 4
 
   @code16 = params[:code]
   @code = @code16.to_i(16)
