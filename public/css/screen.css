@@ -159,6 +159,7 @@ img.user-icon {
 #main {
   width: 900px;
   margin: 40px auto;
+  overflow: hidden;
 }
 
 #footer {
