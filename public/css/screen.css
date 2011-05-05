@@ -105,7 +105,6 @@ img.user-icon {
 
 #header h1 {
   font-size: 200%;
-  font-weight: bold;
   display: inline-block;
   margin-bottom: -2em;
   padding: 10px 20px;
@@ -120,11 +119,18 @@ img.user-icon {
 }
 
 #header h1 a .you {
+  font-weight: bold;
   color: #07C900;
 }
 
 #header h1 a .nicode {
+  font-weight: bold;
   color: blue;
+}
+
+#header h1 a .symbol {
+  margin-left: 4px;
+  color: #AAA;
 }
 
 #header h1 .sub {
