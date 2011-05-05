@@ -174,11 +174,17 @@ img.user-icon {
 }
 
 #left {
+  position: relative;
   float: left;
   width: 280px;
 }
 
+#left:hover, #right:hover {
+  z-index: 10000;
+}
+
 #right {
+  position: relative;
   float: right;
   width: 590px;
 }
