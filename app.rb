@@ -24,6 +24,8 @@ get '/:code' do
   record_history(@code)
 
   @char = @code.chr('utf-8')
+  @char = '&nbsp;' unless @char.valid_encoding?
+
   @favs = DB[:favorites].filter('code = ?', @code)
   @fav = @favs.filter('user_id = ?', current_user[:id]).count > 0 if current_user
   @favs = @favs.join(:users, :id => :user_id)
