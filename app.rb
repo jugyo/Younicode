@@ -125,10 +125,8 @@ helpers do
   def char_link(code)
     capture_haml do
       haml_tag :a, :href => "/#{code.to_s(16)}", :class => 'char-link' do
-        begin
-          haml_concat code.chr('utf-8')
-        rescue ArgumentError
-        end
+        char = code.chr('utf-8')
+        haml_concat char if char.valid_encoding?
       end
     end
   end
