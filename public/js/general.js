@@ -19,13 +19,21 @@ $(function () {
         _code = 0x10000 + _code;
       }
       var chr = String.fromCharCode(_code);
-      $(elem).text(chr).attr({'href':'/' + _code.toString(16)});
+      $(elem).text(chr).attr({'href':'/' + $.toCharCode16(_code)});
       if (_code == $._current_code) {
         $(elem).addClass('current');
       } else {
         $(elem).removeClass('current');
       }
     });
+  };
+
+  $.toCharCode16 = function(code) {
+    var code16 = code.toString(16);
+    for (var i=0; i < (4 - code16.length); i++) {
+      code16 = '0' + code16;
+    };
+    return code16;
   };
 
   // mousewheel
