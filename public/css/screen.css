@@ -72,6 +72,7 @@ table {
 
 body {
   font-family: Helvetica;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -159,7 +160,6 @@ img.user-icon {
 #main {
   width: 900px;
   margin: 40px auto;
-  overflow: hidden;
 }
 
 #footer {
@@ -177,6 +177,7 @@ img.user-icon {
   position: relative;
   float: left;
   width: 280px;
+  z-index: 100;
 }
 
 #left:hover, #right:hover {
